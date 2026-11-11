@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Своя операционная система на Kimi K3.1 Pro — шпаргалка | ИИ Мастодонт</title>
+<!-- seo:start -->
+<meta name="description" content="Своя операционная система на Kimi K3.1 Pro: ставим Kimi Code, получаем техзадание от нейронки, собираем систему с ИИ-ассистентом, КС и Дотой.">
+<link rel="canonical" href="https://aimastodont.com/kimi-os-cheatsheet/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ИИ Мастодонт">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Своя операционная система на Kimi K3.1 Pro">
+<meta property="og:description" content="Своя операционная система на Kimi K3.1 Pro: ставим Kimi Code, получаем техзадание от нейронки, собираем систему с ИИ-ассистентом, КС и Дотой.">
+<meta property="og:url" content="https://aimastodont.com/kimi-os-cheatsheet/">
+<meta property="og:image" content="https://aimastodont.com/kimi-os-cheatsheet/img/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@graph":[
+ {"@type":"Article","headline":"Своя операционная система на Kimi K3.1 Pro","description":"Своя операционная система на Kimi K3.1 Pro: ставим Kimi Code, получаем техзадание от нейронки, собираем систему с ИИ-ассистентом, КС и Дотой.","inLanguage":"ru",
+  "mainEntityOfPage":"https://aimastodont.com/kimi-os-cheatsheet/","datePublished":"2026-11-11","dateModified":"2026-11-11",
+  "author":{"@type":"Organization","name":"ИИ Мастодонт","url":"https://aimastodont.com/"},
+  "publisher":{"@type":"Organization","name":"ИИ Мастодонт","url":"https://aimastodont.com/"},
+  "image":"https://aimastodont.com/kimi-os-cheatsheet/img/hero.jpg"},
+ {"@type":"BreadcrumbList","itemListElement":[
+  {"@type":"ListItem","position":1,"name":"ИИ Мастодонт","item":"https://aimastodont.com/"},
+  {"@type":"ListItem","position":2,"name":"Своя операционная система на Kimi K3.1 Pro","item":"https://aimastodont.com/kimi-os-cheatsheet/"}]}
+]}
+</script>
+<!-- seo:end -->
+<style>
+@font-face{font-family:"Druk";src:url("fonts/Druk Wide Cyr.ttf") format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:"Onest";src:url("fonts/Onest-Regular.ttf") format("truetype");font-weight:400;font-display:swap}
+@font-face{font-family:"Onest";src:url("fonts/Onest-Medium.ttf") format("truetype");font-weight:500;font-display:swap}
+@font-face{font-family:"Onest";src:url("fonts/Onest-SemiBold.ttf") format("truetype");font-weight:600;font-display:swap}
+@font-face{font-family:"Onest";src:url("fonts/Onest-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+@font-face{font-family:"Blender";src:url("fonts/BlenderPro-Medium.ttf") format("truetype");font-weight:500;font-display:swap}
+@font-face{font-family:"Blender";src:url("fonts/BlenderPro-Bold.ttf") format("truetype");font-weight:700;font-display:swap}
+
+:root{--bg:#08080A;--bg2:#0E0E11;--bg3:#131317;--ink:#EFEAE2;--dim:#8B8579;
+--line:rgba(239,234,226,.09);--line2:rgba(239,234,226,.20);--a1:#FF7A2B;--a2:#C9A227;
+--pad:clamp(20px,4vw,64px)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--a1) var(--bg2)}
+html::-webkit-scrollbar{width:12px}
+html::-webkit-scrollbar-track{background:var(--bg2)}
+html::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--a1),var(--a2));border-radius:8px;border:3px solid var(--bg2)}
+html::-webkit-scrollbar-thumb:hover{background:var(--a1)}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Onest",sans-serif;
+font-size:clamp(16px,1.1vw,18px);line-height:1.65;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+background:radial-gradient(900px 600px at 85% 8%,rgba(255,122,43,.07),transparent 70%),radial-gradient(700px 500px at 10% 70%,rgba(201,162,39,.05),transparent 70%)}
+body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:9999;opacity:.025;
+background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E")}
+.wrap{width:min(1080px,100%);margin:0 auto;padding:0 var(--pad);position:relative;z-index:2}
+.ico{width:20px;height:20px;flex:0 0 20px;fill:none;stroke:url(#gr);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;vertical-align:middle}
+
+.aura{position:fixed;width:620px;height:620px;left:0;top:0;pointer-events:none;z-index:0;
+transform:translate(-50%,-50%);transition:opacity .5s;
+background:radial-gradient(circle,rgba(255,122,43,.10),transparent 62%)}
+.bar{position:fixed;left:0;top:0;height:3px;width:0;z-index:200;
+background:linear-gradient(90deg,var(--a1),var(--a2));box-shadow:0 0 18px rgba(255,122,43,.6)}
+
+nav{position:sticky;top:0;z-index:90;background:rgba(8,8,10,.82);backdrop-filter:blur(14px) saturate(1.3)}
+nav::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;
+background:linear-gradient(90deg,transparent,var(--a1),var(--a2),transparent)}
+.nav-in{display:flex;align-items:center;gap:22px;height:64px}
+.brand{font-family:"Druk";font-size:clamp(15px,1.5vw,19px);text-transform:uppercase;letter-spacing:.02em}
+.nav-links{display:flex;gap:6px;margin-left:auto;flex-wrap:wrap}
+nav a{font-family:"Blender";font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+color:var(--dim);text-decoration:none;padding:9px 13px;border-radius:3px;transition:.25s}
+nav a:hover{color:var(--ink);background:rgba(239,234,226,.06)}
+@media(max-width:700px){.nav-links{display:none}}
+
+.hero{position:relative;min-height:min(104vh,1075px);display:grid;align-items:end;overflow:hidden;
+border-bottom:1px solid rgba(239,234,226,.14)}
+.hero-img{position:absolute;inset:-7% 0 0;width:100%;height:114%;object-fit:cover;
+object-position:center 40%;will-change:transform}
+@media(max-width:1000px){.hero{min-height:min(90vh,780px)}.hero-img{object-position:62% 30%}}
+.hero::after{content:"";position:absolute;inset:0;
+background:linear-gradient(180deg,rgba(8,8,10,.55) 0%,rgba(8,8,10,.15) 22%,rgba(8,8,10,.3) 48%,rgba(8,8,10,.76) 70%,rgba(8,8,10,.96) 88%,#08080A 100%)}
+.hero-in{position:relative;z-index:3;width:min(1080px,100%);margin:0 auto;
+padding:0 var(--pad) clamp(46px,6vw,88px);display:flex;flex-direction:column;align-items:flex-start;text-align:left}
+.badge{display:inline-block;font-family:"Blender";font-weight:700;font-size:12px;letter-spacing:.26em;
+text-transform:uppercase;color:var(--a1);border:1px solid var(--a1);padding:8px 15px;border-radius:2px;
+background:rgba(8,8,10,.6);backdrop-filter:blur(6px)}
+h1{font-family:"Druk";font-weight:400;text-transform:uppercase;margin:24px 0 0;
+font-size:clamp(30px,5.6vw,74px);line-height:1;letter-spacing:-.015em;text-shadow:0 6px 44px rgba(0,0,0,.85)}
+h1 em{font-style:normal;color:#FFC061;
+text-shadow:0 0 34px rgba(255,170,70,.85),0 0 70px rgba(255,140,50,.5),0 4px 22px rgba(0,0,0,.95)}
+.sub{margin:20px 0 0;color:#B7B0A4;max-width:58ch}
+.watch{display:inline-flex;align-items:center;gap:11px;margin-top:32px;
+background:linear-gradient(100deg,var(--a1),var(--a2));color:#08080A;
+font-family:"Blender";font-weight:700;font-size:14px;letter-spacing:.14em;text-transform:uppercase;
+padding:16px 30px;border-radius:3px;text-decoration:none;
+box-shadow:0 12px 34px rgba(255,122,43,.28);transition:transform .22s,box-shadow .22s}
+.watch svg{width:16px;height:16px;fill:#08080A}
+.watch:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 18px 46px rgba(255,122,43,.42)}
+
+section{padding:clamp(48px,6.5vw,104px) 0;position:relative;z-index:2}
+h2{font-family:"Druk";font-weight:400;text-transform:uppercase;margin:0 0 12px;font-size:clamp(22px,3.4vw,46px);line-height:1.02}
+.h2-note{color:var(--dim);margin:0 0 38px;max-width:56ch}
+h3{font-family:"Druk";font-weight:400;text-transform:uppercase;margin:0 0 13px;font-size:clamp(17px,2vw,26px);line-height:1.12}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px;perspective:1100px}
+.card{background:linear-gradient(160deg,var(--bg3),var(--bg2));border:1px solid var(--line);
+border-radius:6px;padding:28px 26px;position:relative;overflow:hidden;
+transform-style:preserve-3d;transition:transform .3s cubic-bezier(.2,.7,.2,1),border-color .3s,box-shadow .3s}
+.card:hover{border-color:var(--line2);box-shadow:0 22px 50px rgba(0,0,0,.55)}
+.card::before{content:"";position:absolute;inset:0 0 auto;height:3px;
+background:linear-gradient(90deg,var(--a1),var(--a2))}
+.card p{margin:0;color:var(--dim);font-size:.95em}
+.card .ic{font-family:"Druk";color:transparent;-webkit-text-stroke:1px var(--a1);font-size:34px;line-height:1;margin-bottom:16px;transition:.3s}
+.card:hover .ic{color:var(--a1);-webkit-text-stroke:1px transparent}
+
+.tools{display:grid;gap:11px}
+.tool{display:flex;align-items:center;gap:16px;background:var(--bg2);border:1px solid var(--line);
+border-radius:5px;padding:19px 24px;flex-wrap:wrap;text-decoration:none;color:inherit;
+position:relative;overflow:hidden;transition:transform .25s,border-color .25s,background .25s}
+.tool::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;
+background:linear-gradient(180deg,var(--a1),var(--a2));transform:scaleY(0);transition:transform .3s}
+.tool:hover{border-color:var(--line2);transform:translateX(6px);background:var(--bg3)}
+.tool:hover::before{transform:scaleY(1)}
+.tool .nm{font-family:"Blender";font-weight:700;font-size:15px;letter-spacing:.1em;text-transform:uppercase}
+.tool .ds{color:var(--dim);font-size:.9em;flex:1;min-width:170px}
+.pill{font-family:"Blender";font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+padding:6px 12px;border-radius:2px;border:1px solid var(--line2);color:var(--dim);white-space:nowrap}
+.pill.free{color:var(--a2);border-color:rgba(201,162,39,.45)}
+
+.step{display:grid;grid-template-columns:auto 1fr;gap:clamp(18px,2.6vw,42px);
+background:linear-gradient(155deg,var(--bg3),var(--bg2) 60%);border:1px solid var(--line);
+border-radius:8px;padding:clamp(26px,3.2vw,44px);margin-bottom:16px;position:relative;overflow:hidden;
+box-shadow:0 18px 44px rgba(0,0,0,.35)}
+.step::before{content:"";position:absolute;inset:0 0 auto;height:3px;background:linear-gradient(90deg,var(--a1),var(--a2),transparent)}
+.step::after{content:"";position:absolute;right:-120px;top:-120px;width:300px;height:300px;
+pointer-events:none;background:radial-gradient(circle,rgba(255,122,43,.09),transparent 68%)}
+.step-num{font-family:"Druk";font-size:clamp(34px,5vw,68px);line-height:.85;color:transparent;white-space:nowrap;
+letter-spacing:-.03em;-webkit-text-stroke:1.5px rgba(255,122,43,.55);position:sticky;top:96px;align-self:start}
+.step-body{min-width:0}
+@media(max-width:760px){.step{grid-template-columns:1fr}.step-num{position:static;font-size:38px}}
+.step .lead{color:var(--dim);margin:0 0 20px;max-width:64ch}
+.acts{list-style:none;padding:0;margin:0 0 20px}
+.acts li{position:relative;padding-left:26px;margin-bottom:11px}
+.acts li::before{content:"";position:absolute;left:2px;top:.62em;width:9px;height:9px;border-radius:2px;
+background:linear-gradient(135deg,var(--a1),var(--a2));transform:rotate(45deg)}
+.acts a,.tip a,.lead a{color:var(--a1)}
+code{font-family:ui-monospace,Menlo,monospace;background:rgba(255,122,43,.12);padding:2px 7px;border-radius:3px;font-size:.9em;color:var(--a1);word-break:break-all}
+
+.pr{margin:22px 0;background:#09090B;border:1px solid var(--line);border-left:3px solid transparent;
+border-image:linear-gradient(180deg,var(--a1),var(--a2)) 1;
+box-shadow:0 14px 40px rgba(0,0,0,.55),0 0 34px rgba(255,122,43,.06),inset 0 1px 0 rgba(255,255,255,.04);overflow:hidden}
+.pr-top{display:flex;align-items:center;gap:14px;padding:13px 18px;border-bottom:1px solid var(--line);flex-wrap:wrap}
+.pr-lab{font-family:"Blender";font-weight:700;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--a1)}
+.copy{margin-left:auto;background:transparent;border:1px solid var(--line2);color:var(--dim);
+font-family:"Blender";font-weight:700;font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+padding:8px 15px;border-radius:2px;cursor:pointer;transition:.2s}
+.copy:hover{border-color:var(--a1);color:var(--a1);box-shadow:0 0 20px rgba(255,122,43,.25)}
+.copy.done{border-color:var(--a2);color:var(--a2)}
+.pr-body{margin:0;padding:20px 18px;white-space:pre-wrap;word-break:break-word;
+font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.85em;line-height:1.62;max-height:320px;overflow:auto;
+scrollbar-width:thin;scrollbar-color:var(--a1) rgba(239,234,226,.04)}
+.pr-body::-webkit-scrollbar{width:9px}
+.pr-body::-webkit-scrollbar-track{background:rgba(239,234,226,.04)}
+.pr-body::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--a1),var(--a2));border-radius:5px}
+
+.set{display:grid;grid-template-columns:auto 1fr;gap:8px 18px;margin:18px 0 0;padding:16px 20px;
+border:1px solid var(--line);border-radius:5px;background:rgba(239,234,226,.02);font-size:.94em}
+.set dt{font-family:"Blender";font-weight:700;letter-spacing:.12em;text-transform:uppercase;font-size:12px;color:var(--dim);padding-top:3px}
+.set dd{margin:0}
+@media(max-width:560px){.set{grid-template-columns:1fr}}
+.tip{display:flex;gap:12px;align-items:flex-start;border-radius:5px;padding:16px 20px;margin:18px 0 0;font-size:.94em;
+background:rgba(201,162,39,.05);border:1px solid rgba(201,162,39,.24)}
+.tip .ico{margin-top:3px}
+
+.shot{position:relative;border-radius:10px;overflow:hidden;display:grid;align-items:end;
+box-shadow:0 40px 90px rgba(0,0,0,.65);--gut:clamp(18px,3.2vw,64px);
+width:calc(100vw - var(--gut)*2);margin-left:calc(50% - 50vw + var(--gut));
+margin-top:clamp(52px,7vw,110px);margin-bottom:clamp(52px,7vw,110px)}
+.shot img{position:absolute;inset:-4% 0 0;width:100%;height:108%;object-fit:cover;will-change:transform}
+.shot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(8,8,10,.05) 40%,rgba(8,8,10,.88))}
+.shot figcaption{position:relative;z-index:2;padding:clamp(26px,4vw,64px);max-width:1080px;
+font-family:"Druk";text-transform:uppercase;font-size:clamp(19px,3vw,44px);line-height:1.06}
+.shot .k{display:block;font-family:"Blender";font-weight:700;font-size:12px;letter-spacing:.24em;color:var(--a1);margin-bottom:12px}
+@media(max-width:760px){.shot{--gut:14px}}
+
+[data-rv]{opacity:0;transform:translateY(34px) scale(.985);
+transition:opacity .75s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1)}
+[data-rv].in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){[data-rv]{opacity:1;transform:none;transition:none}.hero-img,.shot img{transform:none!important}}
+
+.links{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:14px}
+.lk{display:flex;gap:16px;align-items:flex-start;padding:22px 22px;border-radius:6px;background:var(--bg2);
+border:1px solid var(--line);text-decoration:none;color:inherit;transition:.25s;position:relative;overflow:hidden}
+.lk:hover{border-color:var(--line2);background:var(--bg3);transform:translateY(-3px)}
+.lk .ico{width:26px;height:26px;flex:0 0 26px}
+.lk b{display:block;font-family:"Blender";font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:15px;margin-bottom:4px}
+.lk span{color:var(--dim);font-size:.9em}
+
+/* блок интенсива: вся карточка - одна ссылка-накладка */
+.cta{background:linear-gradient(155deg,var(--bg3),var(--bg2));border:1px solid var(--line2);border-radius:8px;
+padding:clamp(30px,4vw,58px);position:relative;overflow:hidden;cursor:pointer;
+transition:border-color .3s,transform .3s;animation:glow 3s ease-in-out infinite}
+@keyframes glow{0%,100%{box-shadow:0 0 44px rgba(255,122,43,.10)}50%{box-shadow:0 0 80px rgba(255,122,43,.24)}}
+.cta:hover{border-color:var(--a1);transform:translateY(-4px)}
+.cta-hit{position:absolute;inset:0;z-index:5;display:block}
+.cta::before{content:"";position:absolute;right:-90px;top:-90px;width:300px;height:300px;pointer-events:none;
+background:radial-gradient(circle,rgba(255,122,43,.14),transparent 68%)}
+.cta::after{content:"";position:absolute;left:-90px;bottom:-90px;width:300px;height:300px;pointer-events:none;
+background:radial-gradient(circle,rgba(201,162,39,.14),transparent 68%)}
+.cta h2 span{background:linear-gradient(100deg,var(--a1),var(--a2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.cta-cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,3vw,50px);margin-top:30px}
+@media(max-width:760px){.cta-cols{grid-template-columns:1fr}}
+.cta-cols h4{font-family:"Blender";font-weight:700;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--a1);margin:0 0 15px}
+.cta-cols ul{list-style:none;padding:0;margin:0}
+.cta-cols li{display:flex;gap:11px;align-items:flex-start;margin-bottom:12px;color:var(--dim);font-size:.95em}
+.cta-cols li .ico{margin-top:2px}
+.cta-bottom{display:flex;align-items:center;gap:20px;margin-top:34px;flex-wrap:wrap;border-top:1px solid var(--line);padding-top:28px}
+.cta-bottom .free{font-family:"Blender";font-weight:700;letter-spacing:.1em;text-transform:uppercase;font-size:14px;color:var(--dim)}
+.cta-bottom .free b{color:var(--a2)}
+.cta-btn{margin-left:auto;background:linear-gradient(100deg,var(--a1),var(--a2));color:#08080A;
+font-family:"Blender";font-weight:700;font-size:14px;letter-spacing:.14em;text-transform:uppercase;
+padding:16px 32px;border-radius:3px;transition:transform .22s}
+.cta:hover .cta-btn{transform:translateY(-2px) scale(1.03)}
+
+footer{border-top:1px solid var(--line);padding:44px 0 66px;position:relative;z-index:2}
+.f-in{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.f-in .tag{color:var(--dim);font-size:.92em}
+.f-in button{margin-left:auto;background:none;border:0;cursor:pointer;color:var(--a1);font-family:"Blender";font-weight:700;
+font-size:13px;letter-spacing:.14em;text-transform:uppercase}
+::selection{background:var(--a1);color:#08080A}
+</style>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113751259', 'ym');
+
+    ym(113751259, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<!-- /Yandex.Metrika counter -->
+</head><body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<linearGradient id="gr" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#FF7A2B"/><stop offset="1" stop-color="#C9A227"/></linearGradient>
+</defs></svg>
+
+<div class="bar" id="bar"></div>
+<div class="aura" id="aura"></div>
+
+<nav><div class="wrap nav-in">
+<span class="brand">Мастодонт</span>
+<div class="nav-links">
+<a href="#learn">Что научишься</a><a href="#tools">Инструменты</a><a href="#steps">Шаги</a><a href="#links">Ссылки</a>
+</div></div></nav>
+
+<header class="hero">
+<img class="hero-img" id="heroimg" src="img/hero.jpg" alt="Старый Windows и своя операционная система Mastodont OS">
+<div class="hero-in">
+<span class="badge" data-rv>Материалы к уроку</span>
+<h1 data-rv>Своя операционная<br>система на <em>Kimi K3.1 Pro</em></h1>
+<p class="sub" data-rv>Ставим Kimi Code, просим нейронку написать техзадание и собираем по нему свою систему: окна, файлы, ИИ-ассистент, который управляет ею по команде в чат, и две игры внутри.</p>
+<a class="watch" data-rv href="https://www.youtube.com/watch?v=ATXsdEu5TYk" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l12.5-7.5z"/></svg>Смотреть видео</a>
+</div></header>
+
+<section id="learn"><div class="wrap">
+<h2 data-rv>Что научишься делать</h2>
+<p class="h2-note" data-rv>Всё повторяется в одном приложении, без единой строчки кода руками.</p>
+<div class="cards">
+<div class="card" data-rv><div class="ic">01</div><p>Ставить Kimi Code и включать в нём модель K3.1 Pro</p></div>
+<div class="card" data-rv><div class="ic">02</div><p>Получать полноценное техзадание от нейронки вместо того, чтобы писать огромный промпт самому</p></div>
+<div class="card" data-rv><div class="ic">03</div><p>Собирать свою операционную систему, которая открывается в браузере двойным кликом</p></div>
+<div class="card" data-rv><div class="ic">04</div><p>Подключать ИИ-ассистента, который сам открывает окна, меняет тему и создаёт папки</p></div>
+<div class="card" data-rv><div class="ic">05</div><p>Встраивать в систему игры - шутер и арену, прямо в меню «Пуск»</p></div>
+</div></div></section>
+
+<section id="tools"><div class="wrap">
+<h2 data-rv>Что понадобится</h2>
+<p class="h2-note" data-rv>Для сборки хватит подписки. API нужен только для ассистента внутри системы.</p>
+<div class="tools">
+<a class="tool" data-rv href="https://www.kimi.ai/?utm_campaign=TR_3A1wLEdc&amp;utm_content=&amp;utm_medium=Youtube&amp;utm_source=CH_kEMBez3l&amp;utm_term=" target="_blank" rel="noopener"><span class="nm">Kimi K3.1 Pro</span><span class="ds">Модель, которая пишет всю систему. K3.1 Pro есть в тарифах от Plus, Highspeed - от Pro</span><span class="pill">по подписке</span></a>
+<a class="tool" data-rv href="https://www.kimi.ai/code" target="_blank" rel="noopener"><span class="nm">Kimi Code</span><span class="ds">Приложение для компьютера, в котором идёт вся работа. Windows, Mac и Linux</span><span class="pill free">скачать бесплатно</span></a>
+<a class="tool" data-rv href="https://platform.kimi.ai?track_id=track-ab4c12002a4a48ee8696d7775a99dd3a" target="_blank" rel="noopener"><span class="nm">Kimi API</span><span class="ds">Ключ для ИИ-ассистента внутри твоей системы</span><span class="pill">оплата по факту</span></a>
+</div></div></section>
+
+<section id="steps"><div class="wrap">
+<h2 data-rv>Шаги</h2>
+<p class="h2-note" data-rv>Семь шагов по порядку. Промпты копируются кнопкой.</p>
+
+<article class="step" data-rv><div class="step-num">01</div><div class="step-body"><h3>Ставим Kimi Code</h3>
+<p class="lead">Вся работа дальше идёт в этом приложении. API-ключ для него не нужен - хватает аккаунта Kimi.</p>
+<ul class="acts">
+<li>Открой <a href="https://www.kimi.ai/code" target="_blank" rel="noopener">kimi.ai/code</a> и скачай Kimi Code под свою систему</li>
+<li>Установи и войди своим аккаунтом Kimi</li>
+<li>Создай на компьютере пустую папку под проект</li>
+<li>Открой новую сессию и выбери эту папку</li>
+<li>В выборе модели поставь <b>K3.1 Pro</b></li>
+</ul>
+<div class="tip"><svg class="ico" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg><span>Есть ещё <b>K3.1 Pro Highspeed</b> - та же модель, только в два-три раза быстрее. Она открывается на тарифе Pro и выше.</span></div>
+</div></article>
+
+<article class="step" data-rv><div class="step-num">02</div><div class="step-body"><h3>Нейронка пишет техзадание</h3>
+<p class="lead">Огромный промпт сам не пиши. Попроси нейронку написать его за тебя - она лучше знает, как объяснить задачу самой себе.</p>
+<ul class="acts"><li>Вставь промпт в новую сессию Kimi Code и отправь</li><li>Получишь подробное техзадание: загрузка, вход, окна, меню «Пуск», приложения и ИИ-ассистент</li></ul>
+<div class="pr" data-rv><div class="pr-top"><span class="pr-lab">Промпт 1 - техзадание на систему</span><button class="copy" type="button"><span>Скопировать</span></button></div><pre class="pr-body">Напиши мне промпт, который я вставлю в Kimi Code, чтобы он собрал операционную систему в стиле Windows 11. Назовём её Mastodon OS. Она должна работать прямо в браузере и открываться двойным кликом по index.html, без установки и без сервера. Внутри - свой ИИ-ассистент Мастодонт: чат, который общается дерзко и уверенно, а API-ключ для него вводится в настройках системы.</pre></div>
+</div></article>
+
+<article class="step" data-rv><div class="step-num">03</div><div class="step-body"><h3>Kimi Code собирает систему</h3>
+<p class="lead">Отдаём техзадание обратно в Kimi Code. Он сам разбивает задачу на план, создаёт файлы один за другим и не дёргает тебя вопросами.</p>
+<ul class="acts">
+<li>Скопируй техзадание из ответа целиком</li>
+<li>Вставь его в Kimi Code в той же папке и отправь</li>
+<li>Дождись, пока он пройдёт свой план до конца</li>
+<li>Открой <code>index.html</code> из папки двойным кликом - это твоя система</li>
+</ul>
+<dl class="set"><dt>Модель</dt><dd>K3.1 Pro с максимальной глубиной размышлений - самый умный режим. Highspeed - быстрее</dd></dl>
+</div></article>
+
+<div class="shot" data-rv style="aspect-ratio:2048/1536"><img src="img/test-drive.jpg" alt="Тест-драйв системы" loading="lazy"><figcaption><span class="k">Тест-драйв</span>Проверяем, что работает, а что для вида</figcaption></div>
+
+<article class="step" data-rv><div class="step-num">04</div><div class="step-body"><h3>Доводим систему итерациями</h3>
+<p class="lead">Первая версия обычно выглядит бедно: без картинок, обоев и иконок. Самые крутые результаты получаются в следующих заходах.</p>
+<ul class="acts">
+<li>Напиши в ту же сессию, что поправить: обои, иконки, плавность</li>
+<li>Попроси промпты для картинок, сгенерь их и кинь файлы обратно в чат</li>
+<li>Проверь, что работает: окна двигаются, папки создаются, в проводнике можно делать текстовые документы</li>
+</ul>
+</div></article>
+
+<article class="step" data-rv><div class="step-num">05</div><div class="step-body"><h3>Подключаем ИИ-ассистента</h3>
+<p class="lead">Ассистенту внутри системы нужен свой ключ. Берём его на платформе Kimi API.</p>
+<ul class="acts">
+<li>Открой <a href="https://platform.kimi.ai?track_id=track-ab4c12002a4a48ee8696d7775a99dd3a" target="_blank" rel="noopener">платформу Kimi API</a> и создай ключ в разделе API Keys</li>
+<li>Скопируй ключ и вставь его в настройки ассистента в своей системе</li>
+<li>Сохрани</li>
+</ul>
+<dl class="set"><dt>Base URL</dt><dd><code>https://api.moonshot.ai/v1</code></dd><dt>Модель</dt><dd><code>kimi-k3.1-pro</code></dd></dl>
+</div></article>
+
+<article class="step" data-rv><div class="step-num">06</div><div class="step-body"><h3>Командуем системой из чата</h3>
+<p class="lead">Ассистент не просто болтает - он сам управляет системой. Пиши ему по одной команде.</p>
+<div class="pr" data-rv><div class="pr-top"><span class="pr-lab">Команды ассистенту</span><button class="copy" type="button"><span>Скопировать</span></button></div><pre class="pr-body">Поставь светлую тему и разложи окна
+Верни тёмную тему
+Создай 10 папок
+Удали папки
+Создай 5 блокнотов и в каждый сокращённую версию каждого произведения Шекспира
+Открой блокнот и калькулятор. Поставь светлую тему и разложи окна</pre></div>
+<div class="tip"><svg class="ico" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></svg><span>Не нравится характер ассистента - попроси Kimi Code поменять ему стиль общения, например сделать дерзким рок-н-ролльщиком.</span></div>
+</div></article>
+
+<article class="step" data-rv><div class="step-num">07</div><div class="step-body"><h3>Встраиваем КС и Доту</h3>
+<p class="lead">Вместо Сапёра и Косынки - набор истинного мастодонта. Возвращаемся в ту же сессию Kimi Code.</p>
+<div class="pr" data-rv><div class="pr-top"><span class="pr-lab">Промпт 2 - игры в систему</span><button class="copy" type="button"><span>Скопировать</span></button></div><pre class="pr-body">Добавь в Mastodon OS две встроенные игры, как Сапёр в Windows: 3D-шутер в духе Counter-Strike с картой по мотивам Dust 2 и арену в духе Доты. Обе должны появиться в меню "Пуск" как обычные приложения.</pre></div>
+<ul class="acts">
+<li>Попроси найти готовые 3D-модели или сделать их самому - так игры выглядят живее</li>
+<li>Запусти игру из меню «Пуск», разверни на весь экран клавишей <code>F11</code> и поставь графику на ультра</li>
+</ul>
+</div></article>
+
+<div class="shot" data-rv style="aspect-ratio:2048/1536"><img src="img/nabor.jpg" alt="Набор мастодонта" loading="lazy"><figcaption><span class="k">Финал</span>Своя система, свой ассистент и две игры внутри</figcaption></div>
+</div></section>
+
+<section id="links" style="padding-top:0"><div class="wrap">
+<h2 data-rv>Все ссылки</h2>
+<p class="h2-note" data-rv>Всё, что понадобилось в уроке, в одном месте.</p>
+<div class="links">
+<a class="lk" data-rv href="https://www.kimi.ai/?utm_campaign=TR_3A1wLEdc&amp;utm_content=&amp;utm_medium=Youtube&amp;utm_source=CH_kEMBez3l&amp;utm_term=" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24"><path d="M12 2l2.6 6.4L21 9l-5 4.4L17.5 20 12 16.6 6.5 20 8 13.4 3 9l6.4-.6z"/></svg><div><b>Kimi K3.1 Pro</b><span>Модель, которая пишет систему</span></div></a>
+<a class="lk" data-rv href="https://www.kimi.ai/code" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M7 9l3 3-3 3M13 15h4"/></svg><div><b>Kimi Code</b><span>Скачать приложение</span></div></a>
+<a class="lk" data-rv href="https://platform.kimi.ai?track_id=track-ab4c12002a4a48ee8696d7775a99dd3a" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24"><circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3M14 9l2 2"/></svg><div><b>Kimi API</b><span>Ключ для ассистента</span></div></a>
+</div></div></section>
+
+<section style="padding-top:0"><div class="wrap"><div class="cta" data-rv style="position:relative">
+<a class="cta-hit" href="https://t.me/mastodont_aibot?start=mini_kurs" target="_blank" rel="noopener" aria-label="Забрать интенсив"></a>
+<h2>Первые <span>видеок</span> на ИИ<br>бесплатный интенсив</h2>
+<div class="cta-cols">
+<div><h4>Внутри</h4><ul>
+<li><svg class="ico" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Реальное демо на Claude вживую</li>
+<li><svg class="ico" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Софт, который за 5 минут находит компании без сайтов с готовыми контактами</li>
+<li><svg class="ico" viewBox="0 0 24 24"><path d="M4 12.5l5 5L20 6.5"/></svg>Кейсы учеников: $1650 за 3 проекта без команды</li>
+</ul></div>
+<div><h4>Два бонуса в конце</h4><ul>
+<li><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M14.5 9.2c-.5-.8-1.4-1.2-2.5-1.2-1.5 0-2.5.8-2.5 1.9 0 2.6 5 1.4 5 4.2 0 1.1-1 1.9-2.5 1.9-1.2 0-2.1-.5-2.6-1.3M12 6.5v1.5M12 16v1.5"/></svg>50 скучных и самых прибыльных ниш без конкуренции</li>
+<li><svg class="ico" viewBox="0 0 24 24"><path d="M5 19c1-3 2.5-4.5 4-5M14 4c3 0 6 3 6 6l-6 6-6-6 6-6zM9 14l1 1M15 9.5a1 1 0 1 0 0-.01"/></svg>Чек-лист: первые $500 за 7 дней</li>
+</ul></div>
+</div>
+<div class="cta-bottom">
+<span class="free"><b>Бесплатно.</b> Навсегда.</span>
+<span class="cta-btn">Забрать интенсив</span>
+</div>
+</div></div></section>
+
+<footer><div class="wrap f-in">
+<span class="brand">Мастодонт</span>
+<span class="tag">AI и нейросети - просто, по делу</span>
+<button type="button" id="yt">Найти видео на YouTube</button>
+</div></footer>
+
+<script>
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e){if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}});
+},{threshold:.12,rootMargin:"0px 0px -8% 0px"});
+document.querySelectorAll("[data-rv]").forEach(function(el,i){
+  var inHero=!!el.closest(".hero");
+  if(!inHero && el.getBoundingClientRect().top < innerHeight*1.05){
+    setTimeout(function(){el.classList.add("in")}, 420+(i%6)*90);
+    return;
+  }
+  el.style.transitionDelay=(i%6*70)+"ms";io.observe(el);
+});
+
+var bar=document.getElementById("bar"),hero=document.getElementById("heroimg");
+var shots=[].slice.call(document.querySelectorAll(".shot img"));
+function frame(){
+  var y=scrollY,h=document.body.scrollHeight-innerHeight;
+  bar.style.width=(h>0?y/h*100:0)+"%";
+  if(hero)hero.style.transform="translateY("+(y*.22)+"px)";
+  shots.forEach(function(im){
+    var r=im.parentElement.getBoundingClientRect();
+    if(r.bottom<0||r.top>innerHeight)return;
+    var p=(r.top+r.height/2-innerHeight/2)/innerHeight;
+    im.style.transform="translateY("+(p*-22)+"px)";
+  });
+}
+addEventListener("scroll",function(){requestAnimationFrame(frame)},{passive:true});
+frame();
+
+var aura=document.getElementById("aura");
+addEventListener("pointermove",function(e){aura.style.left=e.clientX+"px";aura.style.top=e.clientY+"px"},{passive:true});
+
+document.querySelectorAll(".card").forEach(function(c){
+  c.addEventListener("pointermove",function(e){
+    var r=c.getBoundingClientRect();
+    var x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+    c.style.transform="rotateY("+(x*7)+"deg) rotateX("+(-y*7)+"deg) translateZ(14px)";
+  });
+  c.addEventListener("pointerleave",function(){c.style.transform=""});
+});
+
+document.querySelectorAll(".copy").forEach(function(b){
+  b.addEventListener("click",function(){
+    var t=b.closest(".pr").querySelector(".pr-body").innerText;
+    navigator.clipboard.writeText(t).then(function(){
+      b.querySelector("span").textContent="Скопировано!";b.classList.add("done");
+      setTimeout(function(){b.querySelector("span").textContent="Скопировать";b.classList.remove("done")},2000);
+    });
+  });
+});
+
+document.getElementById("yt").addEventListener("click",function(){
+  var b=this;navigator.clipboard.writeText("ИИ МАСТОДОНТ Я Заставил ИИ Сделать Операционную Систему").then(function(){
+    b.textContent="Название скопировано - вставь в поиск YouTube";
+    setTimeout(function(){b.textContent="Найти видео на YouTube"},2500);
+  });
+});
+</script>
+</body></html>
